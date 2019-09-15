@@ -1,0 +1,105 @@
+Ruby 的特性
+Ruby 是开源的，在 Web 上免费提供，但需要一个许可证。
+Ruby 是一种通用的、解释的编程语言。
+Ruby 是一种真正的面向对象编程语言。
+Ruby 是一种类似于 Python 和 Perl 的服务器端脚本语言。
+Ruby 可以用来编写通用网关接口（CGI）脚本。
+Ruby 可以被嵌入到超文本标记语言（HTML）。
+Ruby 语法简单，这使得新的开发人员能够快速轻松地学习 Ruby。
+Ruby 与 C++ 和 Perl 等许多编程语言有着类似的语法。
+Ruby 可扩展性强，用 Ruby 编写的大程序易于维护。
+Ruby 可用于开发的 Internet 和 Intranet 应用程序。
+Ruby 可以安装在 Windows 和 POSIX 环境中。
+Ruby 支持许多 GUI 工具，比如 Tcl/Tk、GTK 和 OpenGL。
+Ruby 可以很容易地连接到 DB2、MySQL、Oracle 和 Sybase。
+Ruby 有丰富的内置函数，可以直接在 Ruby 脚本中使用。
+
+Ruby 安装 - Linux
+
+
+源码安装
+下载最新版的 Ruby 压缩文件。请点击这里下载。
+下载 Ruby 之后，解压到新创建的目录下：
+
+wget https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.4.tar.gz
+$ tar -xvzf ruby-2.2.3.tgz    
+$ cd ruby-2.2.3
+现在，配置并编译源代码，如下所示：
+$ ./configure
+$ make
+$ sudo make installu
+安装后，通过在命令行中输入以下命令来确保一切工作正常：
+$ruby -v
+ruby 2.2.3……
+
+自动安装 Ruby
+如果您的计算机已经连接到 Internet，那么最简单安装 Ruby 的方式是使用 yum 或 apt-get。在命令提示符中输入以下的命令，即可在您的计算机上安装 Ruby。
+
+$  sudo yum install ruby    # CentOS, Fedora, 或 RHEL 系统
+
+或
+
+sudo apt-get install ruby-full # Debian 或 Ubuntu 系统
+
+
+设置 Ruby 版本
+
+RVM 装好以后，需要执行下面的命令将指定版本的 Ruby 设置为系统默认版本
+
+$ rvm 2.0.0 --default
+同样，也可以用其他版本号，前提是你有用 rvm install 安装过那个版本
+
+这个时候你可以测试是否正确
+
+$ ruby -v
+ruby 2.0.0p247 (2013-06-27 revision 41674) [x86_64-darwin13.0.0]
+
+$ gem -v
+2.1.6
+这有可能是因为 Ruby 的默认源使用的是 cocoapods.org，国内访问这个网址有时候会有问题，网上的一种解决方案是将远替换成 ruby-china 的，替换方式如下：
+$ gem source -r https://rubygems.org/
+$ gem source -a https://gems.ruby-china.com/
+要想验证是否替换成功了，可以执行：
+
+$ gem sources -l  
+正常的输出结果：
+
+*** CURRENT SOURCES ***
+
+https://gems.ruby-china.com/　
+请确保只有 gems.ruby-china.com
+
+$ gem install rails
+如果你使用 Gemfile 和 Bundle (例如：Rails 项目)
+
+你可以用 Bundler 的 Gem 源代码镜像命令。
+
+$ bundle config mirror.https://rubygems.org https://gems.ruby-china.com
+这样你不用改你的 Gemfile 的 source。
+
+source 'https://rubygems.org/'
+gem 'rails', '4.1.0'
+...　
+
+
+
+Ruby 程序中的空白
+在 Ruby 代码中的空白字符，如空格和制表符一般会被忽略，除非当它们出现在字符串中时才不会被忽略。然而，有时候它们用于解释模棱两可的语句。当启用 -w 选项时，这种解释会产生警告。
+
+实例：
+
+a + b 被解释为 a+b （这是一个局部变量）
+a  +b 被解释为 a(+b) （这是一个方法调用）
+
+
+Ruby 标识符
+标识符是变量、常量和方法的名称。Ruby 标识符是大小写敏感的。这意味着 Ram 和 RAM 在 Ruby 中是两个不同的标识符。
+
+Ruby 标识符的名称可以包含字母、数字和下划线字符（ _ ）。
+
+
+保留字
+
+
+BEGIN do next  then 
+
