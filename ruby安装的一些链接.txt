@@ -1,0 +1,12 @@
+https://www.huoxiaoqiang.com
+
+
+http://railsinstaller.org
+
+
+ruby code editor
+
+
+1. 可以安装railsinstall安装包。里面有ruby,还有其他
+
+2.或者直接安装ruby
